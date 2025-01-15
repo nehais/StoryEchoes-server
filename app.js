@@ -20,6 +20,10 @@ app.use("/users", userRoutes);
 const storyRoutes = require("./routes/story.routes");
 app.use("/stories", storyRoutes);
 
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Story Echoes Home Server" });
+});
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
